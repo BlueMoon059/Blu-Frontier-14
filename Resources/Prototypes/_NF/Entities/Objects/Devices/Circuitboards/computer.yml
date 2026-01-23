@@ -50,3 +50,14 @@
     prototype: ComputerWithdrawBankATM
   - type: ComputerWallmountBoard # Frontier
     prototype: ComputerWallmountWithdrawBankATM # Frontier
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseC3SyndicateContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  id: PirateCommsComputerCircuitboard
+  name: pirate communications computer board
+  description: A computer printed circuit board for a pirate communications console.
+  components:
+    - type: Sprite
+      state: cpu_syndicate
+    - type: ComputerBoard
+      prototype: SyndicateComputerComms

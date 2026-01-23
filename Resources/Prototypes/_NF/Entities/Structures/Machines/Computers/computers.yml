@@ -580,3 +580,37 @@
   components:
   - type: NFDroneConsole
     id: Trade
+
+- type: entity
+  parent: ComputerComms
+  id: PirateComputerComms
+  name: pirate communications computer
+  description: A rum-stained communication console taken from a Station Representative. Use it to announce your presence to the sector.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm_wizard
+    - map: ["computerLayerKeys"]
+      state: wizard_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: AccessReader
+    access: [[ "Pirate" ]]
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-pirate
+    color: "#ac8f30"
+    canShuttle: false
+    global: true
+    announceSentBy: false
+    sound: /Audio/Announcements/war.ogg
+  - type: Computer
+    board: PirateCommsComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 4.0
+    color: "#F317F3"
